@@ -1,5 +1,5 @@
 import React from "react";
-import { Skeleton } from "../../../../src/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 export default function PropertyDetailsLoading() {
   return (
