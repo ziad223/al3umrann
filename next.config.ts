@@ -1,5 +1,5 @@
 // Silence Node.js deprecation warnings (e.g. url.parse()) on dev server
-process.noDeprecation = true;
+(process as any).noDeprecation = true;
 
 const createNextIntlPlugin = require("next-intl/plugin");
 
@@ -36,7 +36,7 @@ const nextConfig = {
       },
     ],
   },
-  webpack: (config, { dev }) => {
+  webpack: (config: any, { dev }: { dev: boolean }) => {
     if (dev) {
       config.cache = false;
     }
