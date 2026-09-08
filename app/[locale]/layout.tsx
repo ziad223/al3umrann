@@ -21,9 +21,10 @@ export async function generateMetadata({
   const { locale } = await params;
   const generalData = await getGeneralSettings(locale);
   const favicon = generalData?.data?.favicon;
+  const siteName = generalData?.data?.site_name || (locale === "ar" ? "العمران" : "Al Omran");
 
   return {
-    title: generalData?.data?.site_name || (locale === "ar" ? "العمران" : "Al Omran"),
+    title: `${siteName} | al3umran`,
     description: generalData?.data?.site_tagline || (locale === "ar" ? "منصة العقارات الذكية" : "Smart Real Estate Platform"),
     icons: favicon
       ? { icon: favicon, apple: favicon, shortcut: favicon }
